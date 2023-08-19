@@ -1,0 +1,71 @@
+<div class="tasks_wraper">
+
+    <h1 class="tasks_header">
+        <% if (typeof listName === 'undefined') { %>
+        Tasks
+        <% } else { %>
+        <%= listName %> Tasks
+        <% } %>
+    </h1>
+
+    <% if (typeof tasks !== 'undefined') { %>
+
+    <ul class="list_of_tasks">
+
+        <% if(tasks.length > 0) { %>
+
+        <% tasks.forEach(function(task) { %>
+
+        <li class="task_item">
+
+            <h4 class="task_name"> <%=task.name %></h4>
+
+            <form
+                action="/delete-task"
+                method="post">
+                <button
+                    class="delete-button"
+                    type="submit"
+                    name="taskId"
+                    value="<%= task._id %>">
+                    <img
+                        src="/images/delete3.png"
+                        alt="delete-img">
+                </button>
+                <input
+                    type="hidden"
+                    name="listId"
+                    value="<%= listId %>">
+            </form>
+
+        </li>
+        <% }); %>
+        <% } %>
+    </ul>
+
+    <% if(tasks.length >= 0) { %>
+    <!-- Add a new task form -->
+    <form
+        class="new_task_form"
+        action="/add-task"
+        method="post">
+        <input
+            type="text"
+            name="newTaskName"
+            placeholder="New Task Name"
+            required="yes"
+            autocomplete="off">
+        <input
+            type="hidden"
+            name="listId"
+            value="<%= listId %>">
+        <button type="submit">
+            <img
+                src="/images/+.png"
+                alt="addition-img">
+        </button>
+    </form>
+    <% } %>
+    <% } %>
+
+</div>

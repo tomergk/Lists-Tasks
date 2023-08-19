@@ -1,0 +1,83 @@
+<div class="lists__wrapper">
+
+  <h1 class="lists__header">Lists</h1>
+
+  <% if (typeof lists !== 'undefined') { %>
+
+  <div class="wrapper_div_for_lists_of_lists">
+
+    <ul class="list_of_lists">
+
+      <% if (lists.length > 0) { %>
+
+      <% lists.forEach(function(list) { %>
+
+      <% if (typeof listId !== 'undefined' && list._id.equals(listId)) { %>
+
+      <li class="list_item" style="background-color:#4C4C6D;">
+
+        <% } else { %>
+
+        <li class="list_item">
+
+          <% } %>
+
+          <form
+            action="/delete-list"
+            method="post">
+            <button
+              class="delete-button"
+              type="submit"
+              name="listId"
+              value="<%= list._id %>">
+              <img
+                src="/images/delete3.png"
+                alt="delete-img">
+            </button>
+          </form>
+
+          <h4 class="list_name">
+            <%= list.name %>
+          </h4>
+
+          <form
+            action="/display-tasks"
+            method="post">
+            <button
+              class="display-button"
+              type="submit"
+              name="listId"
+              value="<%= list._id %>">
+              <img
+                src="/images/open2.png"
+                alt="delete-img">
+            </button>
+          </form>
+
+        </li>
+      </ul>
+
+      <% }); %>
+      <% } %>
+    </div>
+    <% } %>
+
+    <!-- Add a new list -->
+    <form
+      class="new_list_form"
+      action="/add-list"
+      method="post">
+      <input
+        type="text"
+        name="newListName"
+        placeholder="New List Name"
+        required="yes"
+        autocomplete="off">
+      <button type="submit">
+        <img
+          src="/images/+.png"
+          alt="addition-img">
+      </button>
+    </form>
+
+  </div>

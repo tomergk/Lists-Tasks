@@ -1,0 +1,682 @@
+/* ================== GENERAL ================== */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  
+  background: linear-gradient(
+    45deg,
+    #0B666A,
+    #009FBD,
+    #0d5b89
+  );
+  font-family: 'helvetica neue';
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  background-size: cover; /* Ensures the background covers the entire viewport */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================== HEADER ================== */
+
+header {
+  text-align: center;
+  width: 100%;
+  padding: 3rem;
+  background: linear-gradient(
+  90deg,
+  transparent,
+  #00ADB5,
+  transparent
+);
+position: relative; 
+}
+
+/* The house button */
+header a img { 
+  height: 4rem;
+  width: 4rem;
+  position: absolute; 
+  top: 1rem;
+  right: 2rem;
+}
+
+/* ================== GENERAL WRAPER ================== */
+
+.general_wraper {
+  display: block;        
+  min-height: 83.5rem;
+  margin: 4rem auto auto auto;
+}
+
+/* ================== LIST OF LISTS ================== */
+
+.lists__wrapper {
+  width: 25%;
+  border: 3px solid #2B3467;
+  border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  position: fixed;
+  top: 10rem;
+  left: 10rem;  
+  box-shadow: 50px 5px 15px -5px #0d5b89;
+  -webkit-box-shadow: 0px -22px 39px -3px #0d5b89;
+  -moz-box-shadow: 18px -22px 39px -3px #0d5b89;
+  background-image: url('/images/lists_background.png');
+  background-color: #4C4C6D;
+}
+
+.lists__header {
+  text-decoration: underline;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  color: #FFEEBB;
+  background-color: #18204b;
+}
+
+.wrapper_div_for_lists_of_lists {
+  max-height: 30rem; 
+  overflow-y: scroll;
+}
+
+.list_of_lists{
+  list-style-type: none; 
+  padding: 0;
+  margin:0;
+  display: grid;
+  overflow-y: auto;
+}
+
+.list_item {
+  display: flex;
+  cursor: pointer;
+  border-bottom: 2px solid #241468;
+  align-items: flex-end;
+  justify-content: space-between; 
+}
+
+.list_name {
+  color: #F6F1E9;
+  font-size: 30px;
+  margin: 0;
+  display: flex;
+  word-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+button {
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0px 0px 0px 0px;
+  display: flex;
+}
+
+.delete-button:hover {
+  background-color: #091d1f;
+}
+
+.display-button:hover {
+  background-color: #FFE1AF;
+}
+
+.new_list_form {
+  display: flex;
+}
+
+img {
+  width: 30px;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 150%;
+}
+/* ================== LIST OF TASKS ================== */
+
+.tasks_wraper {
+  width: 25%;
+  border: 3px solid #00425A;
+  margin: 4rem auto auto auto;
+  box-shadow: 50px 5px 15px -5px #0d5b89;
+  -webkit-box-shadow: 0px -22px 39px -3px #0d5b89;
+  -moz-box-shadow: 18px -22px 39px -3px #0d5b89;
+  border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  background-image: url('/images/tasks_background.png');
+  background-color: #1B9C85;
+}
+
+.tasks_header {
+  color: #FFEEBB;
+  text-decoration: underline;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  /* border-bottom: 1px solid #F6F1E9; */
+  background-color: #00425A;
+}
+
+.list_of_tasks {
+  list-style-type: none; 
+  text-align: center;
+  padding: 0;
+  margin:0;
+}
+
+.task_item {
+  display: flex;
+  cursor: pointer;
+  border-bottom: 2px solid #241468;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.task_name {
+  color: #F6F1E9;
+  font-size: 30px;
+  margin: 0;
+  margin-left: 8px;
+  display: flex;
+  word-wrap: break-word;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.new_task_form {
+  display: flex;
+}
+
+/* ================== CLOCK ================== */
+
+.clock__wrapper {
+  width: 25%; 
+  position: absolute;
+  right: calc(10%); 
+  top: 10rem;  
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+}
+
+.handwatch-img {
+  width: 60%; 
+  height: 60%;
+}
+
+.date-time {
+  color: #F7E987;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  position: absolute;
+}
+
+.time-part {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.3rem;
+  top: 50%; 
+  left: 48%; 
+}
+
+.date-part {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.8rem;
+  top: 70%; 
+  left: 48%; 
+}
+
+/* Rest of your CSS remains unchanged */
+
+
+/* ================== FOOTER ================== */
+
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: linear-gradient(
+  90deg,
+  transparent,
+  #00ADB5,
+  transparent
+);
+}
+
+footer small {
+  font-size: 1.5rem;
+  color: #F7E987;
+  font-weight: bolder;
+}
+
+
+/* ================== MEDIA QUERIES ================== */
+
+
+@media screen and (min-width: 1200px) { 
+  .lists__wrapper {
+    width: 33%;
+    left: 3rem;  
+  }
+
+  ::placeholder {
+    font-size: 100%;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  .wrapper_div_for_lists_of_lists {
+    max-height: 25rem; 
+  }
+
+  .lists__header {
+    font-size: 250%;
+  }
+  
+  .list_name {
+    font-size: 25px;
+  }
+  
+  .tasks_wraper {
+    width: 33%;
+    margin: 4rem auto auto 50rem;
+  }
+
+  .tasks_header {
+    font-size: 250%;
+  }
+  
+  .task_name {
+    font-size: 25px;
+  }
+  
+  .clock__wrapper {
+    width: 25%; 
+    right: 1rem; 
+    top: 10rem;
+  }
+  
+  .time-part {
+    font-size: 2.2rem;
+  }
+  
+  .date-part {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1094px) and (max-width: 1200) {
+  .lists__wrapper {
+    width: 35%;
+    left: 3rem;  
+  }
+
+  ::placeholder {
+    font-size: 100%;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  .wrapper_div_for_lists_of_lists {
+    max-height: 13rem; 
+  }
+
+  .lists__header {
+    font-size: 250%;
+  }
+  
+  .list_name {
+    font-size: 25px;
+  }
+  
+  .tasks_wraper {
+    width: 35%;
+    margin: 4rem auto auto 45rem;
+  }
+
+  .tasks_header {
+    font-size: 250%;
+  }
+  
+  .task_name {
+    font-size: 25px;
+  }
+  
+  .clock__wrapper {
+    width: 25%; 
+    right: 1rem; 
+    top: 10rem;
+  }
+  
+  .time-part {
+    font-size: 2.2rem;
+  }
+  
+  .date-part {
+    font-size: 1.2rem;
+  }
+}
+
+/* MEDIA QUERIES large devices (e.g., desktops) */
+@media screen and (min-width: 1024px) and (max-width: 1093px) {
+  .lists__wrapper {
+    width: 35%;
+    left: 3rem;  
+  }
+
+  ::placeholder {
+    font-size: 100%;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  .wrapper_div_for_lists_of_lists {
+    max-height: 15rem; 
+  }
+
+  .lists__header {
+    font-size: 250%;
+  }
+  
+  .list_name {
+    font-size: 25px;
+  }
+  
+  .tasks_wraper {
+    width: 35%;
+    margin: 4rem auto auto 42rem;
+  }
+
+  .tasks_header {
+    font-size: 250%;
+  }
+  
+  .task_name {
+    font-size: 25px;
+  }
+  
+  .clock__wrapper {
+    width: 25%; 
+    right: 1rem; 
+    top: 10rem;
+  }
+  
+  .time-part {
+    font-size: 2.2rem;
+  }
+  
+  .date-part {
+    font-size: 1.2rem;
+  }
+}
+
+/* MEDIA QUERIES medium devices (e.g., tablets) */
+@media screen and (min-width: 880px) and (max-width: 1023px){
+  .lists__wrapper {
+    width: 37%;
+    left: 1rem;
+  }
+
+  ::placeholder {
+    font-size: 80%;
+  }
+
+  input {
+    font-size: 80%;
+  }
+
+  .wrapper_div_for_lists_of_lists {
+    max-height: 20rem; 
+  }
+
+  .lists__header {
+    font-size: 250%;
+  }
+  
+  .list_name {
+    font-size: 25px;
+  }
+  
+  .tasks_wraper {
+    width: 37%;
+    margin: 4rem auto auto 40rem;
+  }
+
+  .tasks_header {
+    font-size: 250%;
+  }
+  
+  .task_name {
+    font-size: 25px;
+  }
+  
+  .clock__wrapper {
+    width: 25%; 
+    right: -4rem; 
+    top: 10rem;
+  }
+  
+  .time-part {
+    font-size: 2.2rem;
+  }
+  
+  .date-part {
+    font-size: 1.2rem;
+  }
+}
+
+/* MEDIA QUERIES medium devices (e.g., tablets) */
+@media screen and (min-width: 769px) and (max-width: 879px){
+  .lists__wrapper {
+    width: 37%;
+    left: 1rem;
+  }
+
+  ::placeholder {
+    font-size: 80%;
+  }
+
+  input {
+    font-size: 80%;
+  }
+
+  .wrapper_div_for_lists_of_lists {
+    max-height: 15rem; 
+  }
+
+  .lists__header {
+    font-size: 250%;
+  }
+  
+  .list_name {
+    font-size: 25px;
+  }
+  
+  .tasks_wraper {
+    width: 37%;
+    margin: 4rem auto auto 35rem;
+  }
+
+  .tasks_header {
+    font-size: 250%;
+  }
+  
+  .task_name {
+    font-size: 25px;
+  }
+  
+  .clock__wrapper {
+    width: 25%; 
+    right: -4rem; 
+    top: 10rem;
+  }
+  
+  .time-part {
+    font-size: 1.9rem;
+  }
+  
+  .date-part {
+    font-size: 1.2rem;
+  }
+}
+
+/* MEDIA QUERIES small devices (e.g., smartphones) */
+@media screen and (min-width: 501px) and (max-width: 768px) {
+  .lists__wrapper {
+    width: 35%;
+    left: 1rem;  
+  }
+
+  ::placeholder {
+    font-size: 60%;
+  }
+
+  input {
+    font-size: 60%;
+  }
+
+  .wrapper_div_for_lists_of_lists {
+    max-height: 10rem; 
+  }
+
+  img {
+    width: 23px;
+  }
+
+  .lists__header {
+    font-size: 180%;
+  }
+  
+  .list_name {
+    font-size: 20px;
+  }
+
+  .tasks_wraper {
+    width: 35%;
+    margin: 4rem 7rem auto auto;
+  }
+
+  .tasks_header {
+    font-size: 180%;
+  }
+  
+  .task_name {
+    font-size: 20px;
+  }
+
+  .clock__wrapper {
+    width: 30%; 
+    right: calc(38%); 
+    top: 1.8rem;
+  }
+  
+  .time-part {
+    font-size: 1.5rem;
+  }
+  
+  .date-part {
+    font-size: 1rem;
+  }
+}
+
+/* MEDIA QUERIES extra small devices (e.g., very small screens or zoomed-in views) */
+@media screen and (max-width: 500px) {
+
+  .general_wraper {   
+      min-height: 30.5rem;
+    } 
+
+  ::placeholder {
+    font-size: 60%;
+  }
+
+  img {
+    width: 10px;
+  }
+
+  input {
+    font-size: 60%;
+  }
+
+  header a img {
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute; 
+    top: 1rem;
+    right: 2rem;
+  }
+
+  .lists__wrapper {
+    width: 45%;
+    left: 1rem;  
+  }
+
+  .lists__header {
+    font-size: 100%;
+    padding: 2px 0;
+  }
+
+  .wrapper_div_for_lists_of_lists {
+    max-height: 3rem; 
+  }
+  
+  .list_name {
+    font-size: 11px;
+  }
+  
+  .tasks_wraper {
+    width: 45%;
+    margin: 4rem 1rem auto auto;
+  }
+
+  .tasks_header {
+    font-size: 100%;
+    padding: 2px 0;
+  }
+  
+  .task_name {
+    font-size: 11px;
+  }
+  
+  .clock__wrapper {
+    width: 35%; 
+    right: calc(32%); 
+    top: 2rem;
+  }
+  
+  .time-part {
+    font-size: 1rem;
+  }
+  
+  .date-part {
+    font-size: 0.5rem;
+  }
+}
