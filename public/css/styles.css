@@ -1,27 +1,39 @@
 /* ================== GENERAL ================== */
 
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
-  
-  background: linear-gradient(
-    45deg,
-    #0B666A,
-    #009FBD,
-    #0d5b89
-  );
+  background-image: url('/images/3.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat:no-repeat;
   font-family: 'helvetica neue';
   scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  background-size: cover; /* Ensures the background covers the entire viewport */
+  height: 100vh;
 }
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+img {
+  width: 30px;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 150%;
 }
 
 /* ================== HEADER ================== */
@@ -29,7 +41,8 @@ body::-webkit-scrollbar {
 header {
   text-align: center;
   width: 100%;
-  padding: 3rem;
+  height: calc(5vh - 5rem);
+  padding: 5rem;
   background: linear-gradient(
   90deg,
   transparent,
@@ -39,27 +52,29 @@ header {
 position: relative; 
 }
 
-/* The house button */
-header a img { 
-  height: 4rem;
-  width: 4rem;
+.logo {
+  height: 8rem;
+  width: 15rem;
   position: absolute; 
   top: 1rem;
-  right: 2rem;
+  left: 1rem;
 }
 
 /* ================== GENERAL WRAPER ================== */
 
-.general_wraper {    
-  min-height: 83.5rem;
-  margin: 4rem auto auto auto;
+.general_wraper {
+  display: flex;
+  justify-content: space-between; 
+  padding: 0 10rem;
+  height: 92vh;
+  align-items: start; /* Align items to the top */
 }
 
-/* ================== LIST OF LISTS ================== */
+/* ================== LISTS ================== */
 
 .lists__wrapper {
-  position: fixed;
-  width: 25%;
+  margin-top: 3%;
+  width: 30%;
   border: 3px solid #2B3467;
   border-radius: 10px 10px 0px 0px;
   -moz-border-radius: 10px 10px 0px 0px;
@@ -69,8 +84,6 @@ header a img {
   -moz-box-shadow: 18px -22px 39px -3px #0d5b89;
   background-image: url('/images/lists_background.png');
   background-color: #4C4C6D;
-  top: 10rem;
-  left: 12.5rem;  
 }
 
 .lists__header {
@@ -82,8 +95,9 @@ header a img {
   background-color: #18204b;
 }
 
-.wrapper_div_for_lists_of_lists {
-  max-height: 30rem; 
+.wrapper_div_for_lists_of_list {
+  min-height: 0vh; 
+  max-height: 50vh; 
   overflow-y: scroll;
 }
 
@@ -133,25 +147,11 @@ button {
   display: flex;
 }
 
-img {
-  width: 30px;
-}
-
-::placeholder {
-  color: grey;
-  opacity: 1;
-}
-
-input {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  font-size: 150%;
-}
-/* ================== LIST OF TASKS ================== */
+/* ================== TASKS ================== */
 
 .tasks_wraper {
-  width: 25%;
+  margin-top: 3%;
+  width: 30%;
   border: 3px solid #00425A;
   box-shadow: 50px 5px 15px -5px #0d5b89;
   -webkit-box-shadow: 0px -22px 39px -3px #0d5b89;
@@ -161,9 +161,6 @@ input {
   -webkit-border-radius: 10px 10px 0px 0px;
   background-image: url('/images/tasks_background.png');
   background-color: #1B9C85;
-  /* margin: 4rem auto auto auto; */
-  margin: auto 40%;
-  position: absolute;
 }
 
 .tasks_header {
@@ -172,8 +169,13 @@ input {
   text-align: center;
   margin: 0;
   padding: 20px 0;
-  /* border-bottom: 1px solid #F6F1E9; */
   background-color: #00425A;
+}
+
+.wrapper_div_for_tasks_of_list {
+  min-height: 0vh; 
+  max-height: 50vh; 
+  overflow-y: scroll;
 }
 
 .list_of_tasks {
@@ -210,157 +212,150 @@ input {
 /* ================== CLOCK ================== */
 
 .clock__wrapper {
-  position: absolute;
-  width: 15%; 
-  right: 15rem;
-  top: 10rem;  
-  display: flex;
+  margin-top: 3%;
+  width: 15%;
   align-items: center; 
   justify-content: center;
+  position: relative;
+  display: flex;
 }
 
 .handwatch-img {
   width: 100%; 
-  height: 60%;
 }
 
-.date-time {
-  color: #F7E987;
+.date-part, .time-part {
+  position:absolute;
+  z-index: 1;  
+  color: #420516;
+  font-weight: bolder;     
+  text-align: center;
+  left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
-  position: absolute;
 }
 
 .time-part {
   font-family: 'Orbitron', sans-serif;
-  font-size: 4.3rem;
-  top: 50%; 
-  left: 48%; 
+  font-size: 150%;
+  top: 45%;
 }
 
 .date-part {
   font-family: 'Libre Baskerville', serif;
-  font-size: 1.8rem;
-  top: 70%; 
-  left: 48%; 
+  font-size: 130%;
+  top: 55%;
 }
-
-/* Rest of your CSS remains unchanged */
-
 
 /* ================== FOOTER ================== */
 
 footer {
   text-align: center;
   width: 100%;
-  padding: 1rem;
-  margin-top: 2rem;
-  background: linear-gradient(
-  90deg,
-  transparent,
-  #00ADB5,
-  transparent
-);
+  height: calc(3vh - (3rem * 2));
 }
 
-footer small {
-  font-size: 1.5rem;
-  color: #F7E987;
-  font-weight: bolder;
+footer p {
+  color: #FFD700;
+  padding: calc(3rem - 1.25rem);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00ADB5,
+    transparent
+  );
+  font-size: 2.5rem;
+  width: 100%;
 }
 
 
 
 /* ================== MEDIA QUERIES ================== */
 
-
-
-/* ============= MEDIA QUERIES (MEDIUM DEVICES (Tablets)) =============*/
-
-@media screen and (max-width: 400px){
-  .lists__wrapper {
-    width: 40%;
-    top: 10rem;
-    left: 2rem;  
-  }
-
-  .tasks_wraper {
-    width: 40%;
-    left: 6rem;
-  }
-
-  .clock__wrapper {
-    width: 15%; 
-    right: 17rem;
-    top: 3rem;  
-  }
-
-  .time-part {
-    font-size: 1rem;
-  }
-  
-  .date-part {
-    font-size: 0.5rem;
-  }
-
-  .list_name {
-    font-size: 20px;
-  }
-  
-  .task_name {
-    font-size: 20px;
-  }
-  
-  img {
-    width: 20px;
-  }
-  
-  input {
-    font-size: 100%;
-  }
-}
-
 /* ============= MEDIA QUERIES (SMALL DEVICES (Phones)) =============*/
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 600px) {
+
+  img {
+    width: 15px;
+  }
+
+  input {
+    font-size: 1.5rem;
+  }
+
+  header {
+    height: calc(5vh - 3rem);
+    padding: 3rem; 
+  }
+
+  .logo {
+    height: 4rem; 
+    width: 7rem; 
+  }
+
+  .general_wraper {
+    padding: 0 2rem;
+    justify-content: space-between; 
+  }
+
   .lists__wrapper {
-    width: 40%;
-    top: 10rem;
-    left: 2rem;  
+    width: 45%;
+    border-width: 2px;
   }
 
-  .tasks_wraper {
-    width: 40%;
-    left: 6rem;
+  .lists__header {
+    font-size: 2.5rem;
   }
 
-  .clock__wrapper {
-    width: 15%; 
-    right: 16rem;
-    top: 3rem;  
-  }
-
-  .time-part {
-    font-size: 1rem;
-  }
-  
-  .date-part {
-    font-size: 0.5rem;
+  .list_item {
+    border-bottom-width: 1px;
   }
 
   .list_name {
-    font-size: 20px;
+    font-size: 1.5rem;
   }
-  
+
+  .tasks_wraper {
+    width: 45%;
+    border-width: 2px;
+  }
+
+  .tasks_header {
+    font-size: 2.5rem;
+  }
+
+  .task_item {
+    border-bottom-width: 1px;
+  }
+
   .task_name {
-    font-size: 20px;
+    font-size: 1.5rem;
   }
-  
-  img {
-    width: 20px;
+
+  .clock__wrapper {
+    height: 4rem; 
+    width: 7rem; 
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    background-color: #FFD361;
   }
-  
-  input {
-    font-size: 100%;
+
+  .handwatch-img {
+    display: none;
+  }
+
+  .time-part {
+    font-size: 1.1rem;
+    top: 30%;
+    color: #111111;
+  }
+
+  .date-part {
+    font-size: 1rem;
+    top: 70%;
+    color: #111111;
   }
 }
+
+

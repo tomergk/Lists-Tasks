@@ -8,38 +8,40 @@
         <% } %>
     </h1>
 
-    <% if (typeof tasks !== 'undefined') { %>
-
     <ul class="list_of_tasks">
 
+        <% if (typeof tasks !== 'undefined') { %>
+
         <% if(tasks.length > 0) { %>
+        <div class="wrapper_div_for_tasks_of_list">
 
-        <% tasks.forEach(function(task) { %>
+            <% tasks.forEach(function(task) { %>
 
-        <li class="task_item">
+            <li class="task_item">
 
-            <h4 class="task_name"> <%=task.name %></h4>
+                <h4 class="task_name"> <%=task.name %></h4>
 
-            <form
-                action="/delete-task"
-                method="post">
-                <button
-                    class="delete-button"
-                    type="submit"
-                    name="taskId"
-                    value="<%= task._id %>">
-                    <img
-                        src="/images/delete3.png"
-                        alt="delete-img">
-                </button>
-                <input
-                    type="hidden"
-                    name="listId"
-                    value="<%= listId %>">
-            </form>
+                <form
+                    action="/delete-task"
+                    method="post">
+                    <button
+                        class="delete-button"
+                        type="submit"
+                        name="taskId"
+                        value="<%= task._id %>">
+                        <img
+                            src="/images/delete3.png"
+                            alt="delete-img">
+                    </button>
+                    <input
+                        type="hidden"
+                        name="listId"
+                        value="<%= listId %>">
+                </form>
 
-        </li>
-        <% }); %>
+            </li>
+            <% }); %>
+        </div>
         <% } %>
     </ul>
 
